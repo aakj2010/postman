@@ -1,0 +1,6 @@
+#root {
+  @apply w-[1280px] mx-auto;
+}
+body  {
+  @apply flex items-center justify-center;
+}
