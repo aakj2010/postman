@@ -1,24 +1,25 @@
-import { useState } from "react";
-import RequestForm from "./components/RequestForm"
-import { sendRequest } from "./services/api-service";
-import ResponseViewer from "./components/ResponseViewer";
+import React, { useState } from 'react';
+import './App.css'
+import RequestForm from './components/RequestForm';
+import ResponseViewer from './components/ResponseViewer';
+import { sendRequest } from './services/apiService';
 
-function App() {
+const App = () => {
   const [response, setResponse] = useState(null);
 
   const handleSendRequest = async (requestData) => {
     const res = await sendRequest(requestData);
     setResponse(res);
   };
+
   return (
-    <section className="min-h-screen w-screen container mx-auto flex flex-col justify-center items-center p-4">
-      <h1 className="text-2xl font-bold mb-4">Postman Clone</h1>
-      <div className="w-full max-w-4xl lg:!w-4/5 mx-auto">
+    <div className="min-h-screen !container lg:!w-[120rem] !mx-auto flex flex-col items-center p-4">
+      <div className="w-full max-w-4xl !mx-auto">
         <RequestForm onSendRequest={handleSendRequest} />
         {response && <ResponseViewer response={response} />}
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
