@@ -67,9 +67,9 @@ const RequestForm = ({ onSendRequest }) => {
     };
 
     return (
-        <div className="p-4 border w-4/5 mx-auto rounded-md shadow-md bg-white text-xs">
-            <div className='flex gap-2 '>
-                <div className='flex w-4/5 items-center gap-2 mb-2 border rounded-md'>
+        <div className="p-4 border mx-auto dark:bg-gray-800 rounded-md shadow-md bg-white text-sm">
+            <div className='flex gap-2 dark:bg-gray-800'>
+                <div className='flex w-4/5 items-center gap-2 mb-2 border rounded-md overflow-hidden'>
                     {/* Method Select */}
                     <select
                         className="w-[15%] p-2 rounded-md"
@@ -85,7 +85,7 @@ const RequestForm = ({ onSendRequest }) => {
                     <input
                         type="text"
                         placeholder="Enter URL"
-                        className="w-full mr-2 p-2 border-l pl-2"
+                        className="w-full p-2 border-l pl-2"
                         value={url}
                         onChange={(e) => setUrl(e.target.value)}
                     />
@@ -100,21 +100,21 @@ const RequestForm = ({ onSendRequest }) => {
             </div>
 
             {/* Tab Headers */}
-            <div className="mb-4 flex gap-2 border-b">
+            <div className="mb-4 flex gap-2">
                 <button
-                    className={`p-2 focus:outline-none ${activeTab === 'params' ? 'focus:outline-none border-b-2 border-blue-500 font-bold' : ''}`}
+                    className={`p-2 focus:outline-none dark:bg-gray-700 ${activeTab === 'params' ? 'focus:outline-none border-b-2 border-blue-500 dark:text-white dark:!border-gray-200  font-bold' : ''}`}
                     onClick={() => setActiveTab('params')}
                 >
                     Query Params
                 </button>
                 <button
-                    className={`p-2 focus:outline-none ${activeTab === 'headers' ? 'focus:outline-none border-b-2 border-blue-500 font-bold' : ''}`}
+                    className={`p-2 focus:outline-none dark:bg-gray-700 ${activeTab === 'headers' ? 'focus:outline-none border-b-2 border-blue-500 dark:text-white dark:!border-gray-200 font-bold' : ''}`}
                     onClick={() => setActiveTab('headers')}
                 >
                     Headers
                 </button>
                 <button
-                    className={`p-2 focus:outline-none ${activeTab === 'body' ? 'focus:outline-none border-b-2 border-blue-500 font-bold' : ''}`}
+                    className={`p-2 focus:outline-none dark:bg-gray-700 ${activeTab === 'body' ? 'focus:outline-none border-b-2 border-blue-500 dark:text-white dark:!border-gray-200 font-bold' : ''}`}
                     onClick={() => setActiveTab('body')}
                 >
                     Body
